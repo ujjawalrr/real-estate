@@ -74,6 +74,9 @@ const Contact = ({ listing }) => {
                     {error && <p className='text-slate-700 mt-2 w-full text-center'>{error}</p>}
                 </div>
             )}
+            {!landlord && (
+                <p className='text-slate-700 mt-2 w-full text-center'>Landlord is not available at this moment.</p>
+            )}
         </>
     )
 }

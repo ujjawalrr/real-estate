@@ -51,7 +51,7 @@ const Home = () => {
           <p>Find your next <span className='text-slate-500'>perfect</span></p>
           <p>place with ease</p>
         </h1>
-        <p className='text-gray-700 text-xs sm:text-sm'>Ujjawal Estate is the best place to find your next perfect place to live.</p>
+        <p className='text-gray-700 text-xs sm:text-sm'>Digital Estate is the best place to find your next perfect place to live.</p>
         <p className='text-gray-700 text-xs sm:text-sm'>We have a wide range of properties for you to choose from.</p>
         <Link className='text-blue-800 font-bold text-xs sm:text-sm hover:underline' to={'/search'}>Let's get started...</Link>
       </div>

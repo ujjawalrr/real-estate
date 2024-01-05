@@ -75,7 +75,7 @@ const Contact = ({ listing }) => {
                 </div>
             )}
             {!landlord && (
-                <p className='text-slate-700 mt-2 w-full text-center'>Landlord is not available at this moment.</p>
+                <p className='text-slate-700 mt-2 w-full text-center'>This landlord is not available at this moment.</p>
             )}
         </>
     )

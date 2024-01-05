@@ -64,40 +64,42 @@ const Home = () => {
         ))}
       </Swiper>
 
-      <div className="flex flex-col gap-8 my-10 p-3 max-w-6xl mx-auto">
-        {offerListings && offerListings.length > 0 && (
-          <div>
-            <div className="my-3">
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent offers</h2>
-              <Link className='text-blue-800 font-bold text-sm hover:underline' to={'/search?offer=true'}>Show more offers</Link>
+      <div className='flex justify-center md:px-20 lg:px-40 xl:px-10 max-w-[1600px]'>
+        <div className="flex flex-col gap-8 my-10 p-3">
+          {offerListings && offerListings.length > 0 && (
+            <div>
+              <div className="my-3">
+                <h2 className='text-2xl font-semibold text-slate-600'>Recent offers</h2>
+                <Link className='text-blue-800 font-bold text-sm hover:underline' to={'/search?offer=true'}>Show more offers</Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
+                {offerListings.map((listing) => <ListingItem key={listing._id} listing={listing} />)}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-4">
-              {offerListings.map((listing) => <ListingItem key={listing._id} listing={listing} />)}
+          )}
+          {rentListings && rentListings.length > 0 && (
+            <div>
+              <div className="my-3">
+                <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
+                <Link className='text-blue-800 font-bold text-sm hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
+                {rentListings.map((listing) => <ListingItem key={listing._id} listing={listing} />)}
+              </div>
             </div>
-          </div>
-        )}
-        {rentListings && rentListings.length > 0 && (
-          <div>
-            <div className="my-3">
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for rent</h2>
-              <Link className='text-blue-800 font-bold text-sm hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
+          )}
+          {saleListings && saleListings.length > 0 && (
+            <div>
+              <div className="my-3">
+                <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
+                <Link className='text-blue-800 font-bold text-sm hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8">
+                {saleListings.map((listing) => <ListingItem key={listing._id} listing={listing} />)}
+              </div>
             </div>
-            <div className="flex flex-wrap gap-4">
-              {rentListings.map((listing) => <ListingItem key={listing._id} listing={listing} />)}
-            </div>
-          </div>
-        )}
-        {saleListings && saleListings.length > 0 && (
-          <div>
-            <div className="my-3">
-              <h2 className='text-2xl font-semibold text-slate-600'>Recent places for sale</h2>
-              <Link className='text-blue-800 font-bold text-sm hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              {saleListings.map((listing) => <ListingItem key={listing._id} listing={listing} />)}
-            </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </main>
   )

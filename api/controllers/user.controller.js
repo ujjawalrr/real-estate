@@ -90,7 +90,7 @@ export const contactUser = async (req, res, next) => {
             html: `User ${req.body.from} wants to contact you for listing on our website. <br> <b>Message:</b> ${req.body.message}`
         }
         transporter.sendMail(mailOptions, (error, info) => {
-            res.status(200).json("Contacted successfully!");
+            res.status(200).json("Message sent!");
         })
     } catch (error) {
         next(error);

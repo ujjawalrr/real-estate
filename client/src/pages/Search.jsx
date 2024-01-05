@@ -192,14 +192,16 @@ const Search = () => {
             </div>
             <div className="flex-1">
                 <h1 className='text-3xl font-semibold border-b p-3 text-slate-700 mt-5'>Listing Results:</h1>
-                <div className="p-7 flex flex-wrap gap-4">
+                <div className="p-3 sm:p-7">
                     {!loading && !error && listings.length === 0 && (
                         <p className='text-xl text-slate-700 text-center w-full'>No listing found!</p>
                     )}
                     {loading && (
                         <p className='text-xl text-slate-700 text-center w-full'>Searching...</p>
                     )}
-                    {!loading && listings && listings.map((listing) => <ListingItem key={listing._id} listing={listing} />)}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                        {!loading && listings && listings.map((listing) => <div key={listing._id} className=''><ListingItem listing={listing} /></div>)}
+                    </div>
                     {showMore && (
                         <button onClick={onShowMoreClick} className='text-green-700 p-7 text-center w-full hover:underline'>Show More</button>
                     )}

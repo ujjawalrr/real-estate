@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore from 'swiper';
 import { Navigation } from 'swiper/modules';
@@ -114,9 +114,14 @@ const Listing = () => {
                             </li>
                         </ul>
                         {currentUser && listing.userRef !== currentUser._id && !contact && (
-                            <button onClick={()=> setContact(true)} className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95'>
+                            <button onClick={() => setContact(true)} className='p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95'>
                                 Contact Landlord
                             </button>
+                        )}
+                        {!currentUser && (
+                            <Link to={"/sign-in"}>
+                                <span className='text-blue-700 mt-2 w-full text-center'>Sign In to contact the landlord</span>
+                            </Link>
                         )}
                         {contact && <Contact listing={listing} />}
                     </div>

@@ -24,7 +24,7 @@ const Header = () => {
     }, [location.search]);
 
     return (
-        <header className='bg-slate-200 shadow-md'>
+        <header className='bg-slate-200 shadow-md sticky top-0 z-50'>
             {/* max-w-6xl */}
             <div className='flex justify-between items-center mx-auto p-3'> 
                 <Link to='/'>

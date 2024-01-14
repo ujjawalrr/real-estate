@@ -5,3 +5,22 @@
 body{
     background-color: rgb(241, 245, 241);
 }
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(241, 245, 241);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(153, 153, 153);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(58, 58, 58);
+}
